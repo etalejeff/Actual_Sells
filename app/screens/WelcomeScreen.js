@@ -11,6 +11,14 @@ function WelcomeScreen(props) {
     navigation.navigate('ProductList');
   };
 
+  const handleLoginPress = () => {
+    navigation.navigate('Login');
+  };
+
+  const handleSignupPress = () => {
+    navigation.navigate('Signup');
+  };
+
   return (
     <View style={styles.container}>
       <ImageBackground style={styles.background} source={require("../assets/background.jpg")}>
@@ -22,6 +30,14 @@ function WelcomeScreen(props) {
       <TouchableOpacity style={styles.exploreButton} onPress={handleExplorePress}>
         <Text style={styles.exploreText}>Explore Products</Text>
       </TouchableOpacity>
+      <View style={styles.authButtonsContainer}>
+        <TouchableOpacity style={styles.authButton} onPress={handleLoginPress}>
+          <Text style={styles.authButtonText}>Login</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.authButton} onPress={handleSignupPress}>
+          <Text style={styles.authButtonText}>Sign Up</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -49,6 +65,25 @@ const styles = StyleSheet.create({
     bottom: 50,
   },
   exploreText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  authButtonsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    position: 'absolute',
+    bottom: 150,
+    width: '100%',
+  },
+  authButton: {
+    backgroundColor: '#fc5c65',
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+    borderRadius: 25,
+  },
+  authButtonText: {
     color: '#fff',
     fontSize: 18,
     fontWeight: 'bold',
