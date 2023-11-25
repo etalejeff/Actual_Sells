@@ -9,7 +9,7 @@ function SignupScreen({ navigation }) {
   const handleSignup = () => {
     // Simulate signup functionality
     // For now, just navigate to the ProductListScreen
-    navigation.navigate('ProductList');
+    navigation.navigate('Login');
   };
 
   return (
