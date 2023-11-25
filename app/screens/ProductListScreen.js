@@ -8,21 +8,20 @@ const products = [
     id: 1,
     title: 'Fresh Vegetables',
     price: '$5.99',
-    image: "https://picsum.photos/200/300",
+    image: 'https://picsum.photos/200/300',
   },
   {
     id: 2,
     title: 'Organic Fruits',
     price: '$3.99',
-    image: "https://picsum.photos/200/300",
+    image: 'https://picsum.photos/200/300',
   },
   // Add more products as needed
 ];
 
 function ProductListScreen({ navigation }) {
   const handleProductPress = (product) => {
-    // Navigate to the product details or order screen
-    // navigation.navigate('ProductDetails', { product });
+    navigation.navigate('ProductDetails', { product });
   };
 
   return (
