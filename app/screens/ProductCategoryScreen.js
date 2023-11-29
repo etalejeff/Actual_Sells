@@ -1,32 +1,30 @@
-//ProductCategoryScreen.js
+// ProductCategoryScreen.js
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import ProductList from '../components/ProductList';
 
-const products = [
+const categories = [
   {
     id: 1,
-    title: 'Fresh Vegetables',
-    price: '$5.99',
+    name: 'Fresh Vegetables',
     image: 'https://picsum.photos/200/300',
   },
   {
     id: 2,
-    title: 'Organic Fruits',
-    price: '$3.99',
+    name: 'Organic Fruits',
     image: 'https://picsum.photos/200/300',
   },
-  // Add more products as needed
+  // Add more categories as needed
 ];
 
 function ProductCategoryScreen({ navigation }) {
-  const handleProductPress = (category) => {
+  const handleCategoryPress = (category) => {
     navigation.navigate('Products', { category });
   };
 
   return (
     <View style={styles.container}>
-      <ProductList products={products} onProductPress={handleProductPress} />
+      <ProductList data={categories} onPress={handleCategoryPress} />
     </View>
   );
 }
