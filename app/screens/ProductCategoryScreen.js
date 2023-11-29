@@ -1,4 +1,3 @@
-// ProductListScreen.js
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import ProductList from '../components/ProductList';
@@ -19,7 +18,7 @@ const products = [
   // Add more products as needed
 ];
 
-function ProductListScreen({ navigation }) {
+function ProductCategoryScreen({ navigation }) {
   const handleProductPress = (product) => {
     navigation.navigate('ProductDetails', { product });
   };
@@ -38,4 +37,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProductListScreen;
+export default ProductCategoryScreen;

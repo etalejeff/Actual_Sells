@@ -5,8 +5,8 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-nativ
 function LoginScreen({ navigation }) {
   const handleLogin = () => {
     // Simulate login functionality
-    // For now, just navigate to the ProductListScreen
-    navigation.navigate('ProductList');
+    // For now, just navigate to the ProductCategoryScreen
+    navigation.navigate('CategoryList');
   };
 
   return (

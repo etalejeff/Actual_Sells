@@ -8,7 +8,7 @@ function WelcomeScreen(props) {
 
   const handleExplorePress = () => {
     // Navigate to the product list screen
-    navigation.navigate('ProductList');
+    navigation.navigate('CategoryList');
   };
 
   const handleLoginPress = () => {
@@ -27,9 +27,6 @@ function WelcomeScreen(props) {
           <Text>Buy Farm Feed</Text>
         </View>
       </ImageBackground>
-      <TouchableOpacity style={styles.exploreButton} onPress={handleExplorePress}>
-        <Text style={styles.exploreText}>Explore Products</Text>
-      </TouchableOpacity>
       <View style={styles.authButtonsContainer}>
         <TouchableOpacity style={styles.authButton} onPress={handleLoginPress}>
           <Text style={styles.authButtonText}>Login</Text>
@@ -55,14 +52,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 70,
     alignItems: "center",
-  },
-  exploreButton: {
-    backgroundColor: "#4ecdc4",
-    paddingVertical: 15,
-    paddingHorizontal: 30,
-    borderRadius: 25,
-    position: 'absolute',
-    bottom: 50,
   },
   exploreText: {
     color: '#fff',
