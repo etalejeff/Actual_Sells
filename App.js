@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import ProductCategoryScreen from './app/screens/ProductCategoryScreen';
 import ProductDetailsScreen from './app/screens/ProductDetailsScreen';
+import ProductsScreen from './app/screens/ProductsScreen';
 import LoginScreen from './app/screens/LoginScreen';
 import SignupScreen from './app/screens/SignupScreen';
 
@@ -19,6 +20,7 @@ function App() {
       <Stack.Navigator initialRouteName="Welcome">
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="CategoryList" component={ProductCategoryScreen} />
+        <Stack.Screen name="Products" component={ProductsScreen} />
         <Stack.Screen name="ProductDetails" component={ProductDetailsScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Signup" component={SignupScreen} />
