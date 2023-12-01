@@ -6,11 +6,6 @@ import { useNavigation } from '@react-navigation/native';
 function WelcomeScreen(props) {
   const navigation = useNavigation();
 
-  const handleExplorePress = () => {
-    // Navigate to the product list screen
-    navigation.navigate('CategoryList');
-  };
-
   const handleLoginPress = () => {
     navigation.navigate('Login');
   };

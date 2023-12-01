@@ -1,12 +1,12 @@
 // ProductCard.js
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import React from "react";
+import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 
 function ProductCard({ product, onPress, onAddToCart }) {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.card}>
-        {product.image && typeof product.image === 'string' ? (
+        {product.image && typeof product.image === "string" ? (
           <Image style={styles.image} source={{ uri: product.image }} />
         ) : (
           <Image style={styles.image} source={product.image} />
@@ -23,36 +23,36 @@ function ProductCard({ product, onPress, onAddToCart }) {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     borderRadius: 10,
-    overflow: 'hidden',
+    overflow: "hidden",
     marginBottom: 20,
   },
   image: {
-    width: '100%',
+    width: "100%",
     height: 200,
   },
   title: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginVertical: 10,
   },
   price: {
-    color: 'green',
+    color: "green",
     marginBottom: 10,
     marginLeft: 10,
   },
   addToCartButton: {
-    backgroundColor: '#4ecdc4',
+    backgroundColor: "#4ecdc4",
     padding: 10,
     borderRadius: 5,
     margin: 10,
-    alignItems: 'center',
+    alignItems: "center",
   },
   addToCartButtonText: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 });
 

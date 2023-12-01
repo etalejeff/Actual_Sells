@@ -6,7 +6,7 @@ function LoginScreen({ navigation }) {
   const handleLogin = () => {
     // Simulate login functionality
     // For now, just navigate to the ProductCategoryScreen
-    navigation.navigate('CategoryList');
+    navigation.navigate('Categories');
   };
 
   return (

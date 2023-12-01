@@ -1,20 +1,20 @@
 // ProductsScreen.js
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import ProductList from '../components/ProductList';
+import React from "react";
+import { View, StyleSheet } from "react-native";
+import ProductList from "../components/ProductList";
 
 const products = [
   {
     id: 1,
-    title: 'Fresh Vegetables',
-    price: '$5.99',
-    image: 'https://picsum.photos/200/300',
+    title: "Fresh Vegetables",
+    price: "$5.99",
+    image: "https://picsum.photos/200/300",
   },
   {
     id: 2,
-    title: 'Organic Fruits',
-    price: '$3.99',
-    image: 'https://picsum.photos/200/300',
+    title: "Organic Fruits",
+    price: "$3.99",
+    image: "https://picsum.photos/200/300",
   },
   // Add more products as needed
 ];
@@ -23,12 +23,21 @@ function ProductsScreen({ route, navigation }) {
   const { category } = route.params;
 
   const handleProductPress = (product) => {
-    navigation.navigate('ProductDetails', { product });
+    navigation.navigate("ProductDetails", { product });
+  };
+
+  const handleAddToCartProduct = (product) => {
+    // Handle adding to cart logic for products
+    console.log("Adding to cart:", product.title);
   };
 
   return (
     <View style={styles.container}>
-      <ProductList data={products} onPress={handleProductPress} />
+      <ProductList
+        data={products}
+        onPress={handleProductPress}
+        onAddToCart={handleAddToCartProduct}
+      />
     </View>
   );
 }
@@ -36,7 +45,7 @@ function ProductsScreen({ route, navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f8f4f4',
+    backgroundColor: "#f8f4f4",
   },
 });
 
