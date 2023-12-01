@@ -11,37 +11,58 @@ import LoginScreen from "./app/screens/LoginScreen";
 import SignupScreen from "./app/screens/SignupScreen";
 import CartScreen from "./app/screens/CartScreen";
 import { Ionicons } from "@expo/vector-icons";
+import { CartProvider } from "./app/config/AppContext";
 
 const Stack = createStackNavigator();
 
 function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Welcome">
-        <Stack.Screen
-          name="Welcome"
-          component={WelcomeScreen}
-          options={({ navigation }) => ({
-            headerRight: () => (
-              <TouchableOpacity onPress={() => navigation.navigate("Cart")}>
-                <Ionicons
-                  name="basket-outline"
-                  size={30}
-                  color="#fff"
-                  style={{ marginRight: 15 }}
-                />
-              </TouchableOpacity>
-            ),
-          })}
-        />
-        <Stack.Screen name="Categories" component={ProductCategoryScreen} />
-        <Stack.Screen name="Products" component={ProductsScreen} />
-        <Stack.Screen name="ProductDetails" component={ProductDetailsScreen} />
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Signup" component={SignupScreen} />
-        <Stack.Screen name="Cart" component={CartScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <CartProvider>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Welcome">
+          <Stack.Screen
+            name="Welcome"
+            component={WelcomeScreen}
+            options={({ navigation }) => ({
+              headerRight: () => (
+                <TouchableOpacity onPress={() => navigation.navigate("Cart")}>
+                  <Ionicons
+                    name="basket-outline"
+                    size={30}
+                    color="#fff"
+                    style={{ marginRight: 15 }}
+                  />
+                </TouchableOpacity>
+              ),
+            })}
+          />
+          <Stack.Screen
+            name="Categories"
+            component={ProductCategoryScreen}
+            options={({ navigation }) => ({
+              headerRight: () => (
+                <TouchableOpacity onPress={() => navigation.navigate("Cart")}>
+                  <Ionicons
+                    name="basket-outline"
+                    size={30}
+                    color="#fff"
+                    style={{ marginRight: 15 }}
+                  />
+                </TouchableOpacity>
+              ),
+            })}
+          />
+          <Stack.Screen name="Products" component={ProductsScreen} />
+          <Stack.Screen
+            name="ProductDetails"
+            component={ProductDetailsScreen}
+          />
+          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="Signup" component={SignupScreen} />
+          <Stack.Screen name="Cart" component={CartScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </CartProvider>
   );
 }
 

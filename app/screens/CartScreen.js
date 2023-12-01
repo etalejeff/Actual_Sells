@@ -1,17 +1,18 @@
 // CartScreen.js
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { useCart } from '../config/AppContext';
 
-function CartScreen({ navigation }) {
-  // Fetch the cart items from your state or context
-  const cartItems = []; // Replace with your logic to get cart items
+function CartScreen({ navigation, route }) {
+  // Fetch the cart items from the route parameters
+  const { cartItems } = useCart();
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Shopping Cart</Text>
       {/* Render cart items here */}
-      {cartItems.map((item) => (
-        <View key={item.id} style={styles.cartItem}>
+      {cartItems.map((item, index) => (
+        <View key={index} style={styles.cartItem}>
           <Text>{item.title}</Text>
           {/* Add more details about the item */}
         </View>
@@ -32,12 +33,10 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   cartItem: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    marginBottom: 10,
     borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
-    paddingVertical: 10,
+    borderBottomColor: '#ddd',
+    paddingBottom: 10,
   },
 });
 
