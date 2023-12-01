@@ -9,11 +9,11 @@ function CartScreen({ navigation, route }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Shopping Cart</Text>
+      <Text style={styles.name}>Shopping Cart</Text>
       {/* Render cart items here */}
       {cartItems.map((item, index) => (
         <View key={index} style={styles.cartItem}>
-          <Text>{item.title}</Text>
+          <Text>{item.name}</Text>
           {/* Add more details about the item */}
         </View>
       ))}
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     padding: 20,
   },
-  title: {
+  name: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,

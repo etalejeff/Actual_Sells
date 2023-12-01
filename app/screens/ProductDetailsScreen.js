@@ -20,7 +20,7 @@ function ProductDetailsScreen({ route }) {
     <View style={styles.container}>
       <Image style={styles.image} source={{ uri: product.image }} />
       <View style={styles.detailsContainer}>
-        <Text style={styles.title}>{product.title}</Text>
+        <Text style={styles.name}>{product.name}</Text>
         <Text style={styles.price}>{product.price}</Text>
         <View style={styles.addToCartContainer}>
           <TouchableOpacity style={styles.addToCartButton} onPress={handleRemoveFromCart}>
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   detailsContainer: {
     padding: 20,
   },
-  title: {
+  name: {
     fontSize: 24,
     fontWeight: 'bold',
   },

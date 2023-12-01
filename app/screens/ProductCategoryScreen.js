@@ -1,34 +1,34 @@
-// ProductCategoryScreen.js
+// CategoryCategoryScreen.js
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import ProductList from "../components/ProductList";
+import CategoryList from "../components/CategoryList";
 
 const categories = [
   {
     id: 1,
-    name: "Fresh Vegetables",
+    title: "Vegetables",
     image: "https://picsum.photos/200/300",
   },
   {
     id: 2,
-    name: "Organic Fruits",
+    title: "Poultry",
     image: "https://picsum.photos/200/300",
   },
   // Add more categories as needed
 ];
 
-function ProductCategoryScreen({ navigation }) {
+function CategoryScreen({ navigation }) {
   const handleCategoryPress = (category) => {
     navigation.navigate("Products", { category });
   };
 
   const handleAddToCartCategory = (category) => {
-    console.log("Adding category to cart:", category.name);
+    console.log("Adding category to cart:", category.title);
   };
 
   return (
     <View style={styles.container}>
-      <ProductList
+      <CategoryList
         data={categories}
         onPress={handleCategoryPress}
         onAddToCart={handleAddToCartCategory}
@@ -44,4 +44,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProductCategoryScreen;
+export default CategoryScreen;

@@ -20,38 +20,8 @@ function App() {
     <CartProvider>
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Welcome">
-          <Stack.Screen
-            name="Welcome"
-            component={WelcomeScreen}
-            options={({ navigation }) => ({
-              headerRight: () => (
-                <TouchableOpacity onPress={() => navigation.navigate("Cart")}>
-                  <Ionicons
-                    name="basket-outline"
-                    size={30}
-                    color="#fff"
-                    style={{ marginRight: 15 }}
-                  />
-                </TouchableOpacity>
-              ),
-            })}
-          />
-          <Stack.Screen
-            name="Categories"
-            component={ProductCategoryScreen}
-            options={({ navigation }) => ({
-              headerRight: () => (
-                <TouchableOpacity onPress={() => navigation.navigate("Cart")}>
-                  <Ionicons
-                    name="basket-outline"
-                    size={30}
-                    color="#fff"
-                    style={{ marginRight: 15 }}
-                  />
-                </TouchableOpacity>
-              ),
-            })}
-          />
+          <Stack.Screen name="Welcome" component={WelcomeScreen} />
+          <Stack.Screen name="Categories" component={ProductCategoryScreen} />
           <Stack.Screen name="Products" component={ProductsScreen} />
           <Stack.Screen
             name="ProductDetails"

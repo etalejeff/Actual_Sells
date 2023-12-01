@@ -11,7 +11,7 @@ function ProductCard({ product, onPress, onAddToCart }) {
         ) : (
           <Image style={styles.image} source={product.image} />
         )}
-        <Text style={styles.title}>{product.title}</Text>
+        <Text style={styles.name}>{product.name}</Text>
         <Text style={styles.price}>{product.price}</Text>
         <TouchableOpacity style={styles.addToCartButton} onPress={onAddToCart}>
           <Text style={styles.addToCartButtonText}>Add to Cart</Text>
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 200,
   },
-  title: {
+  name: {
     fontSize: 18,
     fontWeight: "bold",
     marginVertical: 10,
