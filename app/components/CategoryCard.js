@@ -2,7 +2,7 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 
-function CategoryCard({ category, onPress, onAddToCart }) {
+function CategoryCard({ category, onPress}) {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.card}>

@@ -1,23 +1,19 @@
 // CategoryCategoryScreen.js
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { View, StyleSheet } from "react-native";
 import CategoryList from "../components/CategoryList";
-
-const categories = [
-  {
-    id: 1,
-    title: "Vegetables",
-    image: "https://picsum.photos/200/300",
-  },
-  {
-    id: 2,
-    title: "Poultry",
-    image: "https://picsum.photos/200/300",
-  },
-  // Add more categories as needed
-];
+import axios from "axios";
 
 function CategoryScreen({ navigation }) {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    // Fetch categories from API
+    axios.get("https://0343-41-90-181-124.ngrok-free.app/categories")
+      .then(response => setCategories(response.data))
+      .catch(error => console.error("Error fetching categories:", error));
+  }, []);
+
   const handleCategoryPress = (category) => {
     navigation.navigate("Products", { category });
   };
