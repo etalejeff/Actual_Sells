@@ -1,4 +1,4 @@
-// CategoryCategoryScreen.js
+// CategoryScreen.js
 import React, { useState, useEffect } from "react";
 import { View, StyleSheet } from "react-native";
 import CategoryList from "../components/CategoryList";
@@ -9,13 +9,13 @@ function CategoryScreen({ navigation }) {
 
   useEffect(() => {
     // Fetch categories from API
-    axios.get("https://0343-41-90-181-124.ngrok-free.app/categories")
+    axios.get("https://fc70-41-90-181-124.ngrok-free.app/categories")
       .then(response => setCategories(response.data))
       .catch(error => console.error("Error fetching categories:", error));
   }, []);
 
   const handleCategoryPress = (category) => {
-    navigation.navigate("Products", { category });
+    navigation.navigate("Products", { categoryId: category.id});
   };
 
   const handleAddToCartCategory = (category) => {

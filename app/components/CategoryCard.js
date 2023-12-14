@@ -11,7 +11,7 @@ function CategoryCard({ category, onPress}) {
         ) : (
           <Image style={styles.image} source={category.image} />
         )}
-        <Text style={styles.title}>{category.title}</Text>
+        <Text style={styles.name}>{category.name}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 200,
   },
-  title: {
+  name: {
     fontSize: 18,
     fontWeight: "bold",
     marginVertical: 10,

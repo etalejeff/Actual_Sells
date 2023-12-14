@@ -3,10 +3,6 @@ import React from "react";
 import {
   FlatList,
   StyleSheet,
-  TouchableOpacity,
-  Image,
-  Text,
-  View,
 } from "react-native";
 import ProductCard from "./ProductCard";
 
