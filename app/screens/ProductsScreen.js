@@ -11,7 +11,7 @@ function ProductsScreen({ navigation, route }) {
   const categoryId = parseInt(route.params.categoryId, 10); // Ensure it's an integer
 
   useEffect(() => {
-    fetch("https://fc70-41-90-181-124.ngrok-free.app/products")
+    fetch("https://2694-41-90-189-71.ngrok-free.app/products")
       .then((response) => response.json())
       .then((data) => {
         const filteredProducts = data.filter(

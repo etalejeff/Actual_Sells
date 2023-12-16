@@ -9,7 +9,7 @@ function CategoryScreen({ navigation }) {
 
   useEffect(() => {
     // Fetch categories from API
-    axios.get("https://fc70-41-90-181-124.ngrok-free.app/categories")
+    axios.get("https://2694-41-90-189-71.ngrok-free.app/categories")
       .then(response => setCategories(response.data))
       .catch(error => console.error("Error fetching categories:", error));
   }, []);

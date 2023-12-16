@@ -10,6 +10,7 @@ import ProductsScreen from "./app/screens/ProductsScreen";
 import LoginScreen from "./app/screens/LoginScreen";
 import SignupScreen from "./app/screens/SignupScreen";
 import CartScreen from "./app/screens/CartScreen";
+import AddProductsScreen from "./app/screens/AddProductsScreen";
 import { Ionicons } from "@expo/vector-icons";
 import { CartProvider } from "./app/config/AppContext";
 
@@ -30,6 +31,7 @@ function App() {
           <Stack.Screen name="Login" component={LoginScreen} />
           <Stack.Screen name="Signup" component={SignupScreen} />
           <Stack.Screen name="Cart" component={CartScreen} />
+          <Stack.Screen name="AddProducts" component={AddProductsScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </CartProvider>
