@@ -1,5 +1,5 @@
 // AddProductsScreen.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, TextInput, Button, StyleSheet } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
@@ -9,11 +9,21 @@ function AddProductsScreen() {
   const [productName, setProductName] = useState('');
   const [productPrice, setProductPrice] = useState('');
   const [productImage, setProductImage] = useState('');
-  const [categoryId, setCategoryId] = useState('');
+  const [categoryId, setCategoryId] = useState(1);
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    fetch('https://2694-41-90-189-71.ngrok-free.app/categories')
+      .then((response) => response.json())
+      .then((data) => setCategories(data))
+      .catch((error) => console.error(error));
+  }, []);
 
   const handleAddCategory = () => {
+    const categoryData = { name: categoryName, image: categoryImage };
+    console.log('Adding category:', categoryData);
 
-    fetch('https://your-backend-url/categories', {
+    fetch('https://2694-41-90-189-71.ngrok-free.app/categories', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -23,8 +33,10 @@ function AddProductsScreen() {
   };
 
   const handleAddProduct = () => {
-    // Make a POST request to your backend
-    fetch('https://your-backend-url/products', {
+    const productData = { name: productName, price: productPrice, image: productImage, category_id: categoryId };
+    console.log('Adding product:', productData);
+
+    fetch('https://2694-41-90-189-71.ngrok-free.app/products', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -42,9 +54,10 @@ function AddProductsScreen() {
       <TextInput placeholder="Product Price" onChangeText={setProductPrice} />
       <TextInput placeholder="Product Image URL" onChangeText={setProductImage} />
       <Picker selectedValue={categoryId} onValueChange={(itemValue) => setCategoryId(itemValue)}>
-        {/* You need to fetch and map your categories here */}
-        <Picker.Item label="Category 1" value="1" />
-        <Picker.Item label="Category 2" value="2" />
+        <Picker.Item label="Choose category" value="" />
+        {categories.map((category) => (
+          <Picker.Item key={category.id} label={category.name} value={category.id} />
+        ))}
       </Picker>
       <Button title="Add Product" onPress={handleAddProduct} />
     </View>
