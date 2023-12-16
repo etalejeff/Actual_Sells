@@ -54,9 +54,9 @@ function AddProductsScreen() {
       <TextInput placeholder="Product Price" onChangeText={setProductPrice} />
       <TextInput placeholder="Product Image URL" onChangeText={setProductImage} />
       <Picker selectedValue={categoryId} onValueChange={(itemValue) => setCategoryId(itemValue)}>
-        <Picker.Item label="Choose category" value="" />
+        <Picker.Item label="Choose category" value="" style={{ color: "#000", fontSize: 15 }}/>
         {categories.map((category) => (
-          <Picker.Item key={category.id} label={category.name} value={category.id} />
+          <Picker.Item key={category.id} label={category.name} value={category.id} style={{ color: "#000", fontSize: 15 }} />
         ))}
       </Picker>
       <Button title="Add Product" onPress={handleAddProduct} />
